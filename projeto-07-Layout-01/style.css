@@ -1,0 +1,56 @@
+*{
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+:root{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem ;
+}
+
+#APP > *{
+  border: 1px solid #ff0000;
+}
+
+#APP {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  height : 100vh;
+}
+
+.container{
+  padding: 1.6rem 3.2rem;
+
+  width: min(112rem, 100%);
+
+  margin: 0 auto;
+       /* centralizar a div container IMG COMPARANDO OM E SEM AS COISAS*/
+}
+
+main{
+  background-color: #7fffd4;
+  color: #000;
+
+  /* colocar scroll bar no pedaço do meio deixando o resto (header e footer fixos em cada um de seu quadrado)*/
+  overflow-y: scroll;
+}
+
+body{
+  color: aliceblue;
+  background-color: #8a2be2;
+}
+
+header,footer{
+  background-color: #002d2e;
+}
+
+

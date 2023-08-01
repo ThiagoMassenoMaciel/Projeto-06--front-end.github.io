@@ -1,0 +1,347 @@
+Aulas do módulo
+  /*Uma ideia de projeto DROP UMA imagem sua e vaja como seria se fosse verde*/
+
+:::::::::: o QUE FOI APRENDIDO DE NOVO ? ::::::::::::::::::::::
+            css
+                  webkit-para as fontes ficarem mais bonitas ( coloca no :root{     }      )
+                              -webkit-font-smoothing: antialiased;
+                              -moz-osx-font-smoothing: grayscale;
+                  colocar especifico elemento para ter scroll
+                              overflow: scroll
+                  colocar para o elemento ocupar todo espaço restante
+                              flex:1;
+                  ocultar algum elemento 
+                              overflow:hidden
+                              position: absolute
+                              largura e altura 1px
+                  #dica de acessibilidade no input com place holder
+                              coloca a label oculta e o mesmo texto do placeholder nela
+
+                  padronizar img na proporcao 
+                              aspect-ratio: 16/9  
+                               so vai deixar todas imagens do mesmo tamanho até uma viewport minima 
+                  colocar filtro nas coisas
+                              Filter : blur(pixel) saturate(porcentagem) grayscale(2)
+
+
+
+Apresentação do projeto
+01:08
+    nada d+
+
+Figma do Projeto
+
+Iniciando o HTML e CSS do projeto
+03:49
+  estrutura tags uma dentro da outra
+
+  ::Novos códigos no CSS
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+
+Estrutura em grid com header e footer fixos
+06:21
+      deixar o header e footer fixos e o main com scroll
+
+
+      ::::Colocou um display grid na div app com seus filhos tendo borda
+
+             /*Aplicar borda vermelha de 1px a todos os filhos de #app    */
+            app > * {
+                 border: 1px solid #red;
+            }
+
+            app {
+              display: grid;
+              grid-template-rows: max-content 1fr max-content;
+                    isso quer dizer que o ( 1 , 2 , 3 )   1 refere ao tamanho da 1º linha igual o tamanho de todos seus filhos (content = height da linha)
+              height : 100vh;
+            }
+      
+      :::Paddin nas tag e estrategia para responsivo (o main creScer enquanto a largura da viewport for < 112rem  )
+                        ||||||COISA NOVA APRENDIDA|||||||||
+                        -----------------------------------
+                        -------width : min(112rem , 100%); 
+                        -----------------------------------
+                        
+                        aqui criou uma div.container para colocar 
+
+      :padding nas coisas do HEADER - MAIN - FOOTER
+
+                  cria classe = container para todas as tags filha do body ( usando atalho  alt + click na linha )
+                 
+                  HTML
+
+                  HEADER   classe = "container"
+                  MAIN classe = "container"
+                  BODY classe = "container"
+
+                  CSS
+
+                  .container{
+                    padding: 1.6rem 3.2rem;
+                    width: min(112rem, 100%);
+                          define o tamanho máx que a div container vai crescer responsivamente . Enquanto a largura da viewport do usuário (100%)  for < 112rem -continua crescendo
+                    margin: 0 auto;
+                          /* centralizar a div container IMG COMPARANDO OM E SEM AS COISAS*/
+                  }
+
+      :SCROLL BAR E WIDTH INFINITA NO MAIN mesmo com somente o main com largura responsiva além dos 112rem (pois o header e footer continua fixo enquanto a width da viewport < 112rem )
+
+
+                  HTML
+
+                  ira À classe name da tag MAIN e á coloque em uma div interna à tag MAIN  
+                  ( perguntar algum professor se esta ( crase ) frase esta correta)
+
+                  <main>
+                     <DIV.CONTAINER>
+                              <!-- E para funcionar como teste coloque varios textos dentro da div para ir fazendo o scroll somente dentro do main  -->
+                              dentro do 
+                              
+                              <main>
+                                    fora da DIV.CONTAINER mas continuando dentro do main Fica no start da div main e desalinhado com o header e footer 
+                                    <div.container>
+
+                                          o texto fica alinhado = HEADER  e FOOTER
+                  </main>
+
+
+                  CSS 
+
+                  main{
+                        overflow-y : scroll ;
+                  }
+
+
+Variáveis CSS
+03:13
+      intrudução a este assunto
+
+      isso é guardar uma cor dentro da minh caixinha com apelido personalizado
+      emvez de sempre ter que ficar pegando o código da cor (  eu pego a caixinha que tem esse código)
+
+      isso é uma maneira de representar uma cor e assim o código ficar mais profissional pois escreva a cor em apenas um lugar e depois so reutiliza a variavel que tem essa cor  
+
+     ::::: obrigatoriamento isso no css dentro de um seletor div( de preferencia dentro do :root {   }      ) {
+
+            --nome-da-sua-variavel: #corEMhexadecimal
+
+            usar em alguma própriedade dentro de algum seletor  ?
+
+          
+            PROPRIEDADE-CSS : var ( --sua-variavel )   ;
+      }
+
+Adicionando fonts customizadas
+03:21 
+
+      :::::como colocar as fontes  (   as vezes mesmo com a font-family definida no :root   é necessário em algumas outros elementos colocar tmbm   ){
+
+                  clicando em cada elemento dentro do figma e olhando seus conif no modo  ( dev v ativado )
+
+                  ou pelo plugguin FONT FASCIA que pode ser pesquisado quando o modo ( dev ) está desativado
+
+                  link das fones usadas [mulish](https://fonts.google.com/specimen/Mulish?query=mulish)
+
+                  IDEIA PARA UM CONTEÚDO QUE EXPLICA O FORM ACTION GET POST   algumas coisa n envia e n precisa envia formulario tipo pra selecionar especificas tipo de font-family  com os pessos diferentes 400 600 700  isso é algo que n precisso consutar o banco de dados para o user ter acesso a estes valores por isso n aparece no link a informação de qual peso da finte usei 
+
+                  justamente pelo caso de o site do google fonts n enviar como formulario nada que selecionei para o url METODO GET  o link que copio e colo para compartilhar as fontes que usei n é um link incluindo os pesos que selecionei    
+
+                        isso o peso font-weight n entra nos parametros de cabeçalho no link da url 
+      }
+
+Estruturando e estilizando header e footer
+07:52
+38'
+
+
+      :::::::criar o header com a primeira parte das coisas {
+
+                        cria a tag <nav> dentro do header e dentro dela uma imagem da camera seguido home ,galeria, formulario, foto-perfil 
+
+                        <header>
+                              <nav>
+                                    <img  logo >
+                                    <ul>
+                                          <li>home</li>
+                                          <li>Galeria</li>
+                                    </ul>
+
+                                    <form>
+                                          Search 
+                                    </form>
+
+                                    <img  foto-perfil/>                              [Link dessa foto](https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+                                    }
+
+                  ::::::::::Agora faz isso no css do header nav { 
+                        display: flex;
+                              align-itens : 
+                              center ; 
+                              gap : 7.2rem; }
+
+                  ::::::::::Colocar no css do-    header nav > form     -para ocupar o tamanho máximo {
+                              flex : 1 ;
+                            
+                            }
+                  ::::::::::Tirar os pontos do <li> no css do-   ul li   -para ocupar o tamanho máximo {
+                              list-style: none;
+                            }
+                  ::::::::::Editar a imagem e ajeitar ela , tirar e alinhar o texto do footer {
+
+                              header img.avatar{
+                                    width: 5rem;
+                                    height: 5rem;
+
+                                    border-radius: 50%;
+
+                                    object-fit: cover; /* vai emcobrir o pedaço  que trnasbordar o length da tag img*/
+                              }
+                              
+                              /*  Vai diretamente no p  */
+                                    footer p{
+                                    text-align: center;
+                                    font-size: 1.6rem;
+                                    font-weight: 600;
+                                    }
+                      }
+
+Formulário de pesquisa com boas práticas de acessibilidade
+05:09
+37'
+
+            #Dica de acessibilidade 
+            quando for usar placeholder
+            colocar texto do placeholder =  label (e oculte ela ) 
+            já que o placeholder não é lido pelos motores de acessibilidade . Então a label vai mostrar a mensagem do placeholder para o leitor de acessibilidade 
+
+                  ::::::::::::Ocultar a label e editar o placeholder da página
+                              .input-wrapper label{
+                                    width: 1px;
+                                    height: 1px;
+
+                                    position: absolute;
+
+                                    overflow: hidden;
+                              }
+
+                              .input-wrapper input{
+                                    width: 100%;
+                                    padding: 1.2rem 1.6rem;
+
+                                    font-size: 1.7rem;
+
+                                    background-color: var(--color-base-gray-100);
+                                    border: 0;
+
+                                    border-radius: 0.6rem;
+
+                                    font-weight: 600;
+                                    font-family: 'Mulish', sans-serif;
+
+                              }
+
+                              .input-wrapper input::placeholder{
+                                    font-size: 1.6rem;
+
+                                    line-height: 1.6rem;
+                                    font-family: 'Mulish', sans-serif;
+
+                                    color: var(--color-base-gray-500);
+
+                                    opacity: 0.45;
+                              }
+
+
+Estruturando a galeria com tags HTML modernas e semânticas
+03:37
+32'
+
+      ::::::Coloca tudo isso dentro div.container que esta dentro do main e use api random
+          AP1 ramdomica  https://source.unsplash.com/random?d=1
+
+            (varias img 
+                  (cada um             ---figure
+                        (img)
+                        (detalhes)     ---figcaption
+                        (tags)
+                  )
+            )
+
+                          <h1>Galeria</h1>
+
+                              <section class="gallery">
+                                    <figure class="item">
+
+                                          <img alt="" src="" />
+                                          <figcaption class="details">
+
+                                                <h2></h2>
+
+                                                <div class="tags">
+                                                      <span>tag</span>
+                                                </div>
+
+                                          </figcaption>
+                                    </figure>
+                              </section>
+
+      ::::::Agora coloca varias copias de figure mudando apenas os titulos e variavel do link  a b c d e f g h i todos podem receber a mesma letra
+                  https://source.unsplash.com/random?d=1
+                  https://source.unsplash.com/random?a=1
+                  https://source.unsplash.com/random?b=1
+                  https://source.unsplash.com/random?c=1
+
+Aplicando grid na galeria
+02:34
+27'
+
+      :::: coloque uma largura de 100% onde a imagem estiver
+                  .item img{
+                        width: 100%;
+                  }
+      :::: coloque paddin e font-size dos textos no main e display grid na section.gallery   3 colunas com tamanho 1fr 
+
+Proporção das imagens aspect-ratio
+02:03
+5'
+      :::::Proporcao das imagem + object fit : cover    
+                  tem varios tipos tem o proporcao 
+                  :quadrado
+                        aspect-ratio:1/1;
+                  :retângulo
+                        aspect-ratio:9/16;
+                  :e entre outros
+
+Estilos dos títulos e tags das imagens
+02:41
+15'
+
+      :::Na div que tem os textos de cada imagem coloque o pading nela 
+      
+            .details{
+                  padding: 2.2rem;
+            }
+
+      :::Coloque um border radius na div que guarda as img , figcaption e se a imagem transbordar poe um overflow : hiden na div com border-radius   
+
+            .item{
+
+                  background-color: var(--color-base-white);
+                  border-radius: 0.8rem;
+                  overflow: hidden;
+            }           
+
+CSS Filter
+05:39
+https://maujor.com/tutorial/css3-filters.php
+            :::ver depois cada um dos Filter
+
+             saturação
+             contraste
+             grayscale(10)
+             hue-rotate(70deg) 
+             contrast(101%) 
+             saturate(200%)

@@ -12,13 +12,12 @@
 :root{
   font-size: 62.5%;
 
-  --color-base-hue:240;
-  --color-base-white:hsl(0, 0%, 100%);
-  --color-base-gray-100:hsl(100, 20%, 90%);
-  --color-bas-gray-300: hsl(var(--color-base-hue), 60%, 58%);
-  --color-base-gray-500:hsl(0, 0%, 24%);
-  --color-base-gray-900:hsl(var(--color-base-hue), 6%, 13%);
-
+  --color-base-white:#fff;
+  --color-base-gray-100:#f5f5f5;
+  --color-base-gray-100:#dedede;
+  --color-base-gray-900:#202024;
+  --color-bas-gray-300:#8d8d99;
+  --color-base-gray-500:#3D3D3D;
 
   font-family: 'Mulish', sans-serif;
 }
@@ -56,8 +55,6 @@ main h1{
   background-color: var(--color-base-white);
   border-radius: 0.8rem;
   overflow: hidden;
-
-
 }
 
 .item img{
@@ -71,17 +68,15 @@ main h1{
   transition-delay: 0ms;
   transition-timing-function: ease-out;
 */
-/*
+
 
   transition-timing-function: ease;
   transition-timing-function:  ease-in;
   transition-timing-function:  ease-in-out;
   transition-timing-function: ease-out;
   transition-timing-function: step-end;
-*/ 
+  
    transition: all 2s ease-out;
-
-   display: block;   /*para n sobrar o espaço este a img e o figcaption*/
 
  /* filter: grayscale(10); se quiser colocar inicialmente da cor cinza */
 }
@@ -102,6 +97,24 @@ main h1{
 
 .details h2{
   font-size: 1.8rem;
+
+}
+
+.details h2 a{
+  background-color: var(--color-base-gray-100);
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+.details h2 a:hover{
+  --color-base-gray-100:#dedede;
+  opacity: 0.8;
+
+  border-left: 8px solid #484848;
+  border-radius: 0 8px 8px 0;
+
+  background-color: #b4b4b4;
+
 }
 
 .tags{
@@ -109,7 +122,7 @@ main h1{
 }
 
 .tags span{
-  padding: 0.2rem;
+  padding: 0.6rem;
   background-color: var(--color-base-gray-100);
 
   border-radius: 0.4rem;
@@ -119,11 +132,15 @@ main h1{
 
   text-transform: uppercase;
 }
-/*
+
+.tags h4{
+  margin-bottom: 1rem;
+}
+
 #APP > *{
   border: 1px solid #ff0000;
 }
-*/
+
 #APP {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
@@ -148,41 +165,6 @@ header nav, nav ul{
 header form{
   flex: 1;
 }
-/*------------------------------------------animation------------------------------*/
-footer{
-  --var-startY:100%;
-  animation: move 0.8s ;
-
-}
-
-header {
-  --var-startY:-100%;
-  animation: move 0.8s ;
-}
-
-.item{
-  --var-delay:0.4s;
-  animation: appear 0.5s var(--var-delay) backwards;
-}
-
-@keyframes move {
-  from {
-    transform:translateY(var(--var-startY));
-  }
-}
-
-@keyframes appear{
-  0%{
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  50%{
-    transform: scale(1.2);
-  }
-
-
-}
-/*------------------------------------------animation------------------------------*/
 
 ul li{
   list-style: none;
@@ -237,7 +219,7 @@ header img.avatar{
 
   border-radius: 50%;
 
-  object-fit: cover; /* vai cobrir o pedaço  que transbordar o length da tag img*/
+  object-fit: cover; /* vai emcobrir o pedaço  que trnasbordar o length da tag img*/
 }
 
 .avatar:hover{
@@ -247,27 +229,5 @@ header img.avatar{
 
 footer{
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-
-  font-family: inherit;
-  font-size: 1.8rem;
-
-
 }
 
-footer a {
-  text-decoration: none;
-  color: var( --color-bas-gray-300);
-  
-  font-size: 1.8rem ;
-  font-weight: 700;
-
-}
-
-footer a:hover{
-  text-decoration: underline;
-}

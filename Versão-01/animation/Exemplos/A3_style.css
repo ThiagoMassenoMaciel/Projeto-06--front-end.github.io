@@ -1,0 +1,272 @@
+body{
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+}
+
+.animation_css_2 {
+  background-color: #00ff00;
+}
+.animation_css_3 {
+  background-color: #fffb00;
+}
+.bloc{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name: animation-l-r;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+.block{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name: reverter-animation-r-l;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+@keyframes  animation-l-r{
+
+  100%{
+    transform: translateX(calc(100vw - 100% - 5rem));
+  }
+}
+
+@keyframes  reverter-animation-r-l{
+  100%{
+    transform: translateX(calc(100vw - 100% - 5rem));
+  }
+}
+
+
+/*erro   esqueci sintaxe  
+    esqueci o direction e calc()
+
+*/
+
+.blo{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name: back;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+}
+
+.bl{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name:  animation-l-r;
+  animation-duration: 8s;
+  animation-fill-mode:backwards;
+}
+
+@keyframes back {
+    50%{
+    transform: translateX(calc(100vh - 100%));
+    animation-delay: 2s;
+  }
+}
+
+
+
+@keyframes vai-volta{
+  0%{
+
+  }
+  50%{
+    transform: translateX(calc(100vh - 100%));
+  }
+}
+
+@keyframes vai-volta--{
+  50%{
+    transform: translateX(calc(100vh - 100% ));
+  }
+
+   100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes aula{
+  50%{
+    transform: translateX(calc(100vw - 100% -16px));
+  }
+
+   100%{
+    transform: translateX(0);
+  }
+}
+/* duvidas - pq ele não foi até o canto onde o vai-volta foi ? sendo que eu coloquei os mesmos valores */
+
+
+.b{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name:  novo;
+  animation-duration: 4s;
+  animation-fill-mode:forwards;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
+@keyframes novo {
+  /* ele vai fazer essa animação 2 vezes a segunda de maneira diferente da primeira*/
+  100%{
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+/* a diferença entre estes dois é que um vai mais rápido que o outro*/
+@keyframes novo- {
+  /* ele vai fazer essa animação 2 vezes a segunda de maneira diferente da primeira*/
+  50%{
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+
+
+/* e se eu tirar este animation-direction : alternate e juntar com o @keyframe novo-   o que acontece ?   
+
+
+funciona como se n tivesse tirado o alternate 0 porque NÃO entendi .
+
+
+.b{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name:  novo;
+  animation-duration: 4s;
+  animation-fill-mode:forwards;
+  
+  animation-iteration-count: 2;
+}
+
+
+/* e se eu trocar animation-direction : alternate e pelo 
+reverse-alternate  o que acontece ?
+
+vai sair da   r  para left  
+e voltar da   left para r
+
+.b{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name:  novo;
+  animation-duration: 4s;
+  animation-fill-mode:forwards;
+  animation-direction : revelse-alternate
+  animation-iteration-count: 2;
+}
+
+
+
+
+
+
+*/
+
+
+
+._{
+  background-color: #ff03ddee;
+
+  width: 10rem;
+  height:4rem;
+
+  margin-top: 20rem;
+
+  border-radius: 40%;
+
+  padding-left: 10%;
+
+  animation-name: infinito;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes infinito{
+  from{
+    transform: translateX(0%);
+    transform: scale(1.1);
+  }
+  50%{
+    transform: translateX(200%);
+    transform: scale(10.4);
+ 
+  }
+  100%{
+    transform: rotateY(200%);
+  }
+}
+
+
+
+
+/********Animation_css_3
+
+
+*/
+/*EX1 passado*/
+@keyframes agora{
+  0%{
+    transform: scale(4.4);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
+
+.começou-animação{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 1rem;
+
+  animation-name: agora;
+  animation-duration: 3s;
+
+  animation-fill-mode: forwards;
+
+}
+.blo{
+  background-color: #d5fad5;
+
+  width: 4rem;
+  height: 4rem;
+
+  animation-name: back;
+  animation-duration: 8s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+
+
+footer{
+  background-color: #001424;
+  color: #fff;
+}

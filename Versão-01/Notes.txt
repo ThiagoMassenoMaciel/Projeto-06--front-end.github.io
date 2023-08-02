@@ -1,5 +1,28 @@
 Aulas do módulo
+
+atualização versão 1.1
+
+
+a diferença do código
   /*Uma ideia de projeto DROP UMA imagem sua e vaja como seria se fosse verde*/
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+a diferença do transition para o animation é a necessidade do primeiro ser precedido de alguma ação / alteração 
+
+e especificar qual propriedade fez a ação
+
+transition -name
+transition -duration
+transition -delay
+	   -direction
+	    timing-function 
+
+position styck
+animation		 -name
+			 -duration
+			 -delay
+
+
+
 
 :::::::::: o QUE FOI APRENDIDO DE NOVO ? ::::::::::::::::::::::
             css
@@ -345,3 +368,397 @@ https://maujor.com/tutorial/css3-filters.php
              hue-rotate(70deg) 
              contrast(101%) 
              saturate(200%)
+
+CSS Transition
+08:34
+            ::::para a imagem n passar por cima do figcaption por ela para cima com z-index 1 depois de colocar o transform scale(1:1)
+                        .details{
+                              padding: 2.2rem;
+                              background-color: var(--color-base-white);
+                              position: relative;
+                              z-index: 1;
+                        }
+
+            :::: para usar o transition eu preciso definir ( olhar no dev tools)
+                        https://animista.net/
+
+                        a  propriedade que eu vou transicionar 
+                        o tempo que vai demora 
+                        se eu espero para esta transição começar
+                        a frequencia de velocidade
+                                                  ease-out
+                                                  Out · Sine
+                                                  Out · Quadratic
+                                                  Out · Cubic
+                                                  Linear Out, Slow In
+                                                  Out · Back
+
+                                                  mais usados
+
+                                                  transition-timing-function: ease;
+                                                  transition-timing-function:  ease-in;
+                                                  transition-timing-function:  ease-in-out;
+                                                  transition-timing-function: ease-out;
+                                                  transition-timing-function: step-end;
+                                                      
+                        transition-property: transform,filter;
+                        transition-duration: 1s;
+                        transition-delay: 0ms;
+                        transition-timing-function: ease-out;
+
+                        ele tem short-hand
+
+                        transition: property-01 3s ease, property-02 4s ease-in-out;
+                        
+                        transition: all 2s ease-out;
+
+CSS animation 01
+09:09
+
+      para animar precisa inicio meio e fim   e @key frames   e seu display block 
+      ::::::::::
+                  animation-name
+                  animation-duration
+
+                  @keyframe name {
+                        from{
+
+                        }
+
+                        to{
+
+                        }
+                  }
+
+
+      ::::::::::Nessa aula vamos aprender a criar animações para os nossos projetos e para isso vamos utilizar as keyframes.
+
+                                    Estrutura básica do HTML visto em aula:
+
+                                    <div class="square"></div>
+                                    CSS básico da página:
+
+                                    body {
+                                    background-color: mediumpurple;
+                                    }
+
+                                    .square {
+                                    width: 4rem;
+                                    height: 4rem;
+                                    background-color: white;
+                                    opacity: .6;
+                                    }
+                                    Código final:
+
+                                    .square {
+                                    animation-name: move;
+                                    animation-duration: 1s;
+                                    animation-fill-mode: forwards;
+                                    }
+
+                                    @keyframes move {
+                                    /* from */
+                                    0% {
+                                    }
+
+                                    /* to */
+                                    100% {
+                                    transform: translateX(calc(100vw - 100% - 16px));
+                                    }
+                                    }
+
+
+      faltando -1'19"     ::::::::  animation-fill-mode:  fowards backwards both 
+                              escolher o jeito que o elemento animado fai ficar no final da animacão 
+                              for   ele vai padrozir o que foi definido no keyframe from ( ou 100%)
+                              back   ele vai padrozir o que foi definido no keyframe to ( ou 0%)
+
+                              inicio to 0%         fim from 100%
+                              linha do tempo
+                              Definimos com o   @keyframes nome-escolhido
+
+
+                              animation-name
+                              animation-duration
+
+                              definir a posicao do elemento depois da animação acabar
+                              animation-fill-mode:     back for   ou          both
+
+
+
+
+
+      ||||||||||||-------codigo-----------||||||||||
+                        Nessa aula vamos aprender a criar animações para os nossos projetos e para isso vamos utilizar as keyframes.
+
+                        Estrutura básica do HTML visto em aula:
+
+                        <div class="square"></div>
+                        CSS básico da página:
+
+                        body {
+                        background-color: mediumpurple;
+                        }
+
+                        .square {
+                        width: 4rem;
+                        height: 4rem;
+                        background-color: white;
+                        opacity: .6;
+                        }
+                        Código final:
+
+                        .square {
+                        animation-name: move;
+                        animation-duration: 1s;
+                        animation-fill-mode: forwards;
+                        }
+
+                        @keyframes move {
+                        /* from */
+                        0% {
+                        }
+
+                        /* to */
+                        100% {
+                        transform: translateX(calc(100vw - 100% - 16px));
+                        }
+                        }
+
+
+
+so fiz até animation A2
+
+
+
+CSS animation 02
+04:37
+1h30'
+      :::::::::::3 exercicios
+
+                  ==>reverter animacao
+                  ==>ir e voltar
+                  ==>animar infinitamente
+
+                  -mudar a direção da animação   
+                  |		usando também animation-fill-mode: for back ward
+                  -add propriedades na linha do tempo(50%)
+                  |
+                  -definir quantos vezes vai fazer a animação
+                  |
+
+                  animation-direction: normal
+                  |		     reverse
+                  |		     alternate
+                  |		     reverse-alternate
+                                    
+
+                  animation-interact-count: numero de vezes;
+                  |			  infinity;
+
+
+      ||||||||||||-------codigo-----------||||||fiz um projeto com os 3 exercicios||||
+                        Nessa aula iremos aprender a mudar a direção da animação e defini a quantidade de vezes que ela irá acontecer.
+
+                        Código final:
+
+                        .square {
+                        animation-name: move;
+                        animation-duration: 1s;
+                        animation-fill-mode: forwards;
+                        animation-direction: alternate;
+                        animation-iteration-count: infinite;
+                        }
+
+                        @keyframes move {
+                        /* to */
+                        100% {
+                        transform: translateX(calc(100vw - 100% - 16px));
+                        }
+                        }
+
+
+CSS animation 03
+05:03
+
+      ::::::::::exercicios
+
+                  colocar delay                          ---|animation-delay: 2s ou 2000ms
+                  
+                  testar as funcionalidades de tempo     ---|animation-timing-function :  
+                  
+                        padrão ease
+                              ease-in
+                              ease-in-out
+                              ease-out
+
+
+                        personalizado
+                              cubic-bezier(x¹, y¹,  x², y²)
+                              cubic-bezier(0, 0.21, 1, 3.7)
+
+
+                        em quadros por passo (tipo animação de desenho 2d)
+                              steps(quantos passos eu quero que ele faça por cada animação)
+
+
+      ||||||||||||-------codigo-----------||||||fiz um projeto com os 3 exercicios||||
+
+                        .square {
+                        animation-name: move;
+                        animation-duration: 1s;
+                        animation-fill-mode: forwards;
+                        animation-direction: alternate;
+                        animation-iteration-count: infinite;
+                        animation-delay: 2s;
+                        animation-timing-function: ease-in-out;
+                        }
+
+                        @keyframes move {
+                        /* to */
+                        100% {
+                        transform: translateX(calc(100vw - 100% - 16px));
+                        }
+                        }
+
+CSS animation 04
+04:48
+
+
+      :::3 exercicios  teoria + pratica exemplos
+
+            :::1  quando o hover for ativado na div de cor preta 🚫pare a sua animação
+                        este mesmo
+
+            :::2  Exercicio 02 quando o hover for ativado na div de cor preta 🚫pare a sua animação   e coloque essa div para piscar
+                        ele mesmo
+
+            :::3  Exercicio 03  praticar o animation-timing- steps e outras 
+            Nessa aula iremos aprender como iniciar ou pausar uma animação e compodemos aplicar múltiplas animações no mesmo lugar.
+                              aii faltou praticar mais 
+            
+            :::4 Exercicios com shorthand
+                                    isso so com o tempo para eu acostumar a fazer em ordem correta
+
+      ||||||||||||-------codigo-----------||||||fiz um projeto com os 2 exercicios||||
+
+            .square {
+            animation-name: move, blink;
+            animation-duration: 1s, 200ms;
+            animation-fill-mode: forwards;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            /* animation-delay: 2s; */
+            animation-timing-function: steps(10);
+            }
+
+            .square:hover {
+            animation-play-state: paused;
+            }
+
+            @keyframes move {
+            /* to */
+            100% {
+            transform: translateX(calc(100vw - 100% - 16px));
+            }
+            }
+
+            @keyframes blink {
+            0%, 100% {
+            opacity: 0.6;
+            }
+
+            50% {
+            opacity: 1;
+            }
+            }
+            Código com shorthand:
+
+            animation: move 1s forwards alternate infinite, blink 100ms infinite;
+
+
+Aplicando animações no projeto
+06:28
+
+      ::::Animação para o header e o footer 
+                  cria um @keyframe para ser usada pela mesma variável com valores diferentes de acordo com o que foi setado dentro do seletor css
+                  header
+                        --var-f:valor1
+                  footer
+                        --var-f:valor2
+
+                  @keyframe mave {
+                        começar pela posição inicial 
+                              com positivo % - anima de baixo para cima
+                              com negativo % - anima de cima para baixo
+                  }
+
+      :::::Animação para as caixinhas item começa transparente( pois o backwards engole as informações do 0% dentro do @keyframe para dentro da div pai ) 
+      
+      e para cada item diferente colocaremos um delay diferente em sequência a uma mesma variavel que representa um delay;
+
+
+                  .item{
+                        animation: appear 0.5s .5s backwards;
+                        }
+               -----CSS---------
+                  .item{
+                              --var-delay:valor-inicial
+                              animation: appear 0.5s --var-delay backwards;
+                              }
+
+                              @keyframes move {
+                              from {
+                              transform:translateY(var(--var-startY));
+                              }
+                        }
+
+                        @keyframes appear{
+                              0%{
+                              opacity: 0;
+                              transform: scale(0.7);
+                              }
+                              50%{
+                              transform: scale(1.2);
+                        }
+            -----html-----
+
+                  vai na tag daquele elemento a ser animado e coloque style inline com a alteração de valor para a mesma variavel 
+
+
+      :::Ajeitar o espaçamento dentro da imagem com o figcaption 
+                  coloca um display block na imagem block na imagem
+
+      ||||||||||||-------codigo-----------||||||fiz um projeto com os 2 exercicios||||
+                  
+            .item {
+                  width : 100%;
+
+                  aspect-ratio:16/9;
+
+                  transition: all 200ms ease-out;
+
+                  display: block;
+            }
+
+
+Alterando cores com HSL
+05:37
+      ::::::::Manutenabilidade Fazer variaveispara futuramente mudar as cores de varias coisas do site usando apenas uma própriedade mudando so uma vez 
+                  Transforme todas as cores dentro da variavvel do 
+
+                  em vez de somente 
+                  
+                  tipo Hex -> para 
+                  HSL()
+                  ( Hue , Saturation , Lumiance)
+                  (360 , 100% , 100%)
+
+                  irá perceber que existe um padrão 
+
+                  o gray 300 e 900 tem o mesmo hue  240. 
+                  O que há de repetitivo padronize em outra variável
+
+                  --var-hue:240;
+      uma pequena alteraçao estratégica acarreta numa grande mudança
+

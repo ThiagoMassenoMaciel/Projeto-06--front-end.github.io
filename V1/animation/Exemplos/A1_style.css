@@ -1,0 +1,70 @@
+body {
+  background-color: mediumpurple;
+}
+
+
+body h2{
+  margin: 0 auto 2rem;
+}
+
+body h2 a {
+  padding: 2rem;
+  background-color: #000000;
+  color: #fff;
+}
+
+
+
+/*FAZER IR DE UM LADO DA PAGINA PARA O OUTRO E PARA ELE FICAR PARADO AO PONTO OPOSTO AO INICIO */
+.mover {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  opacity: .6;
+}
+
+.mover {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateX(100px);
+}
+.testar {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  opacity: .6;
+}
+.a{
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  opacity: .6;
+/* Para o animation funcionar com o link a tem que por display block*/
+  display: block;
+}
+
+.a {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateX(100px);
+}
+
+.testar {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateX(100px);
+}
+
+@keyframes move {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+ 
+}
+}

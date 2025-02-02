@@ -1,0 +1,9 @@
+Problemas encontrados   IDEIAS PARA NOVOS PROJETOS
+
+
+:::::Demanda muito tempo para eu criar os icon do shortcut icon
+      criar um script para automatizar
+                                      criar imagens com o tamanho de pixel escolhido
+                                      criar uma sequencia de cores degradê 
+                                      definir a figura geometrica de cada imagem
+                                      cortar o fundo e aparecer como shortcut icon apenas a cor nas abas html

@@ -1,0 +1,8 @@
+Layout 
+
+
+        HEADER (fixo sem usar position fixed)
+
+        MAIN (WIDTH INFINITA  ou CRESCENDO RESPONSIVA ATÉ 122rem de largura)
+
+        FOOTER (fixo sem usar position fixed)

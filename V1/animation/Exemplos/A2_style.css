@@ -1,0 +1,271 @@
+/*
+CSS básico da página:
+*/
+
+*{
+  text-align: center;
+}
+body {
+  background-color: mediumpurple;
+
+}
+
+body h2{
+  margin: 0 auto 2rem;
+
+  position: static;
+  top: 0;
+}
+
+
+
+body h2 a {
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #fff;
+
+  border-radius: 0 0 1rem 1rem;
+
+}
+
+body h2 a:hover{
+  padding: 1rem 2rem;
+  background-color: #fff ;
+  color:  #000000;
+
+  border-radius: 0 0 1rem 1rem;
+}
+
+header{
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 3rem;
+  background-color: #a698b3;
+  color: #fff;
+
+  box-sizing: content-box;
+
+  padding: 0.5rem;
+
+  border-radius: 0 0 2rem 2rem;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 4;
+}
+
+header .divs{
+  border-radius: 2rem 2rem 0 0;
+
+
+}
+
+header h1{
+  padding: 2.5rem;
+  margin: 1rem auto 2rem;
+
+}
+
+header h1, header a{
+
+  text-decoration: none;
+
+  padding: 0.2rem;  
+  color:
+
+}
+
+h1 a {
+  border-radius: 20px;
+
+  font-weight: 400;
+
+  background-color: #000000;
+  color: #fff;
+}
+
+
+h1 a:hover {
+  font-weight: 800;
+  border-radius: 20px;
+
+  background-color: #fff ;
+  color:  #000000;
+
+}
+/*situaçoes como essa é estritamente necessário usar variaveis*/
+
+.navs > * {
+  border-radius: 4px;
+}
+
+span.misturado{
+  background-color:#371457 ;
+}
+
+header .porcentagem{
+  background-color: #6100c2;
+}
+
+header .pixel{
+  background-color:#ff0062;
+}   
+
+
+section {
+  background-color: #371457;
+  padding: 1rem;
+
+  margin-top: 2rem;
+}
+
+.square {
+  padding: 1rem;
+  width: 8rem;
+
+  box-sizing: border-box;
+  background-color: #ffffff;
+  opacity: .6;
+
+  margin: 0;
+  padding: 0;
+}
+
+.move-porcento section{
+  background-color: #6100c2;
+}
+/*
+Código final:
+*/
+/*    move-mixed
+.square
+s1
+s2
+
+          (100% / 100vh / 100px)mixed
+          (back/for)   wards   
+*/
+#s2 {
+  animation-name: move-mixed-b;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+
+#s1 {
+  animation-name: move-mixed-f;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+@keyframes move-mixed-b {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+  transform: translateX(calc(100vh - 100% - 16px));
+}
+/*        qual a diferença do vh para o vw ?  */
+}
+
+@keyframes move-mixed-f {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+  transform: translateX(calc(100vh - 100% - 16px));
+}
+}
+
+/*
+  move-porcento
+.square
+s4
+s5
+
+*/
+
+#s3{
+  animation-name: move-porcento-b;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+
+#s4 {
+  animation-name: move-porcento-f;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+@keyframes move-porcento-b {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+  transform: translateX(200%);
+}
+
+}
+
+@keyframes move-porcento-f {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+  transform: translateX(200%);
+}
+}
+
+.move-pixel {
+  
+  margin-bottom: 500px;
+}
+
+main > * {
+  margin: 10rem;
+}
+
+.move-pixel section{
+  background-color: #ff0062;
+}
+
+#s5{
+  animation-name: move-pixel-b;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+
+#s6 { 
+  animation-name: move-pixel-f;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+@keyframes move-pixel-b {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+  transform: translateX(calc(200px));
+}
+
+}
+@keyframes move-pixel-f {
+/* from */
+0% {
+}
+
+/* to */
+100% {
+  transform: translateX(200px);
+}
+}

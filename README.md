@@ -1,6 +1,7 @@
 ###### Projeto-06--front-end.github.io
 
-# Uma galeria de imagens Versão 1.0🧑🏾‍💻 [link](https://thiagomassenomaciel.github.io/Projeto-06--front-end.github.io/V1/index.html)
+# Uma galeria de imagens Versão 1.0🧑🏾‍💻 
+#### Veja o projeto clicando [aqui](https://thiagomassenomaciel.github.io/Projeto-06--front-end.github.io/V1/index.html)
 ![image](https://github.com/user-attachments/assets/8f00d094-b30a-4d05-888b-e20b82b21b9a)
 
 ### 
